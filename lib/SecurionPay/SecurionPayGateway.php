@@ -417,6 +417,15 @@ class SecurionPayGateway
     }
 
     /**
+     * @param string $disputeId
+     * @return \SecurionPay\Response\Dispute
+     */
+    public function retrieveDispute($disputeId) {
+        return $this->get("/disputes/{$disputeId}", '\SecurionPay\Response\Dispute');
+    }
+
+
+    /**
      * @param \SecurionPay\Request\CheckoutRequest $request
      * @return string
      */
