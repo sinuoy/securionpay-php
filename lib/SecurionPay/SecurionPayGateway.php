@@ -424,6 +424,14 @@ class SecurionPayGateway
         return $this->get("/disputes/{$disputeId}", '\SecurionPay\Response\Dispute');
     }
 
+    /**
+     * @param \SecurionPay\Request\DisputeUpdateRequest $request
+     * @return \SecurionPay\Response\Dispute
+     */
+    public function updateDispute($request) {
+        return $this->post('/disputes/{disputeId}', $request, '\SecurionPay\Response\Dispute');
+    }
+
 
     /**
      * @param \SecurionPay\Request\CheckoutRequest $request
