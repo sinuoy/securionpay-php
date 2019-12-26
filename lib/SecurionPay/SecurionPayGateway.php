@@ -417,6 +417,14 @@ class SecurionPayGateway
     }
 
     /**
+     * @param \SecurionPay\Request\CreditRequest $request
+     * @return \SecurionPay\Response\Credit
+     */
+    public function createCredit($request) {
+        return $this->post('/credits', $request, '\SecurionPay\Response\Credit');
+    }
+
+    /**
      * @param string $disputeId
      * @return \SecurionPay\Response\Dispute
      */
